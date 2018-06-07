@@ -1,0 +1,6 @@
+author: Pinku <prantoran@gmail.com>
+license: 
+  header: This file is part of {{ .appName }}.
+  text: |
+    {{ .copyright }}
+    my licence
