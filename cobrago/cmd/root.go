@@ -25,6 +25,8 @@ import (
 
 var (
 	cfgFile, projectBase, userLicense string
+	Verbose                           bool
+	Source                            string
 )
 
 // rootCmd represents the base command when called without any subcommands
@@ -63,6 +65,9 @@ func init() {
 	viper.BindPFlag("useViper", rootCmd.PersistentFlags().Lookup("viper"))
 	viper.SetDefault("author", "NAME HERE <EMAIL ADDRESS>")
 	viper.SetDefault("license", "apache")
+
+	// persistent flags, declared as global on the root
+	rootCmd.PersistentFlags().BoolVarP(&Verbose, "verbose", "v", false, "verbose output")
 
 	// Here you will define your flags and configuration settings.
 	// Cobra supports persistent flags, which, if defined here,
